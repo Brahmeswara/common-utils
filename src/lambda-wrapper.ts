@@ -3,6 +3,7 @@ const jsonBodyParser = require('@middy/http-json-body-parser');
 const eventNormalizer = require('@middy/http-event-normalizer');
 const headerNormalizer = require('@middy/http-header-normalizer');
 const httpCors = require('@middy/http-cors');
+const urlEncodePathParser = require('@middy/http-urlencode-path-parser');
 
 
 // wrap successful execution with what is expected out gateway manager
@@ -37,6 +38,7 @@ const wrapper = (handler: any) =>
         .use(headerNormalizer())
         .use(httpCors())
         .use(jsonBodyParser()) 
+        .use(urlEncodePathParser())
         .use(wrapSuccess()) 
         .use(wrapFailure());
 }

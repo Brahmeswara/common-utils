@@ -1,6 +1,6 @@
 {
   "name": "@docudata/common-utils",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "common code like logger, lambda",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "prepare": "npm run co:login",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
-    "build:dev": "npm run prepare && npm install",
+    "build:dev": "npm run prepare && npm install && npm run tsc",
     "build:prod": "npm run prepare && npm install --production"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "@middy/http-event-normalizer": "^2.1.0",
     "@middy/http-header-normalizer": "^2.1.0",
     "@middy/http-json-body-parser": "^2.1.0",
+    "@middy/http-urlencode-path-parser": "^2.2.0",
     "@middy/validator": "^2.1.0",
     "bottlejs": "^2.0.0",
     "webpack": "^5.35.1"
